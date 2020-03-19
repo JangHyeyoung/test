@@ -6,3 +6,5 @@ test text입니다.
 다시 수정하거나 파일을 생성할땐[ vim 파일 이름 작성 ]입니다.
 print("Hello world");
 print("hotfix 다녀갑니다.");
+print("hotfix 여기다가 일한껀데요);
+print("master");
