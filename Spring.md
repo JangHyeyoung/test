@@ -525,9 +525,23 @@ lib->Spring 3.x이상으로 설정->jar파일을 복사
 <br>
 <br>
 
-# Maven 사용법
+# Maven
 
 <br>
+1. pom.xml의 <dependencies />설정을 통해서 필요한 라이브러리를 다운받아서 저장소에 관리하는 역할
+2. 라이브러리 관리 프로그램
+
+## Maven사용법
+
+<br>
+1. 자기 컴퓨터의 방화벽 설정 해제
+2. .m2의 repository폴더 내부를 삭제시킨후 다시 실행
+
+<dependency>
+	<groupid>상위 패키지명.하위패키지명</groupid>
+	<artifactid>jar파일의 이름</artifactid>
+	<version>3.2.3-Release(버전이름)</version>
+</ dependency>
 
 [:arrow_up: TOP](#목차) 
 
