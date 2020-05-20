@@ -88,7 +88,7 @@ const template2=`
    <li><a href="#about">About</a></li>
  </ul>
 ```
-' '은 문자열뿐만 아니라 수식계산, 객체의 함수호출할때도 사용한다.
+> ' '은 문자열뿐만 아니라 수식계산, 객체의 함수호출할때도 사용한다.
 
 ```
 const name = '테스트'
@@ -98,4 +98,82 @@ console.log(`1+1=${1+1}`) // 1+1=2
 console.log(`안녕. ${name2.toUpperCase()}`) // 안녕. TEST
 ```
 >4. arrow function(화살표 함수)
+:function 키워드 대신 화살표(=>)를 사용하여 보다 간략한 방법으로 함수를 선언할 수 있다.(자료형 추가)   
+JSON표기법 형태의 객체내부에서는 함수를 작성할때 화살표함수를 사용X
+```
+var pow=function(x:number){ //function pow(x:number)
+    console.log('x=>'+x);
+    return x*x;
+}
+const test=x=>x*x;
+console.log(test(20));//400
+```
+>**자바스크립트에서 자주 사용되는 함수 5가지(배열)**
+-indexOf 함수(특정한 값을 찾을때)
+```
+var index = [12, 5, 8, 130, 44].indexOf(8); 
+console.log("index is : " + index );
+//결과값
+index is : 2
+```
+-filter 함수(JSON객체중에서 특정한 값만 추출,반환)
+```
+function isBigEnough(element, index, array) { 
+   return (element >= 10); 
+} 
+          
+var passed = [12, 5, 8, 130, 44].filter(isBigEnough); 
+console.log("Test Value : " + passed );
+//결과값
+Test Value :12,130,44
+```
+-**Map 함수**(기존의 배열의 요소들을 하나씩 읽어들여서 계산후 길이가 같은 새로운 배열을 만들어주는 함수)
+```
+var numbers = [1, 4, 9]; 
+var roots = numbers.map(Math.sqrt); 
+console.log("roots is : " + roots );
+//결과값
+roots is : 1,2,3
+```
+-reduce 함수(배열의 각 요소에 대해 주어진 reduce 함수를 실행하고, 하나의 결과값을 반환)
+```
+var total = [0, 1, 2, 3].reduce(function(a, b){ return a + b; }); 
+console.log("total is : " + total );
+//결과값
+total is : 6
+```
+-forEach 함수(for문 대신에 사용(성능향상))
+```
+let num = [7, 8, 9];
+num.forEach(function (value) {
+  console.log(value);
+}); 
+//결과값
+7,8,9
+```
+>5. rest,spread
+:매개변수를 전달 못한경우에는 내부적으로 디폴트 매개변수값을 지정
+-rest 매개변수(정상적으로 매개변수값이 전달되면은 적용X)
+```
+//x:number,y:number->default(기본값)
+function plus(x=8,y=9){
+    return x+y;
+}
+console.log('plus()=>',plus());
+//결과값
+17
+```
+-spread 연산자(react에서 많이 사용하는 연산자)
+```
+//동적으로 배열의 값을 받아서 처리해주는 연산자 (...배열명)
+function ktest(...abc){
+    console.log(Array.isArray(abc)) //배열이면 true, 배열X false
+    console.log('abc=>',abc)
+}
 
+ktest(1);
+
+//결과값
+true
+abc=> [ 1 ] 
+```
