@@ -88,3 +88,14 @@ const template2=`
    <li><a href="#about">About</a></li>
  </ul>
 ```
+' '은 문자열뿐만 아니라 수식계산, 객체의 함수호출할때도 사용한다.
+
+```
+const name = '테스트'
+const add = '서울시 강남구'
+const name2 = 'test'
+console.log(`1+1=${1+1}`) // 1+1=2
+console.log(`안녕. ${name2.toUpperCase()}`) // 안녕. TEST
+```
+>4. arrow function(화살표 함수)
+
