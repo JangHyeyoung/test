@@ -24,3 +24,17 @@ npm install -g @특정버전명(3.8.3)
 ```
 ## 1.3. Gulp서버(편집기) 설치
 1. [**Gulp**](https://www.typescriptlang.org/index.html#download-links/)에서 설치
+2. 컴파일 형식
+```
+tsc 예제파일명.ts
+```
+3. 실행 형식
+```
+node 예제파일명.js
+```
+## 1.4. Gulp서버의 개요 및 작성법
+Gulp는 프로젝트를 다른 빌드들로 빌드해 줄 수 있으며 많은 플러그인들을 통해 확장성있게 작업할 수 있도록 도와주는 빌드시스템.
+
+사용목적:<br>
+
+
