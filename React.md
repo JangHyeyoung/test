@@ -66,4 +66,25 @@ const user = {
 user.name='Kim'
 console.log(user); //Kim
 ```
+>3. template literal(백틱 문자열)
+:줄바꿈,다음줄 개행 자동으로 인식   
+'작은 따옴표'와 "따옴표"를 혼용해서 사용
+```
+const template2=`
+ <ul class="nav-item">
+   <li><a href="#home">Home</a></li>
+   <li><a href="#news">News</a></li>
+   <li><a href="#contact">Contact</a></li>
+   <li><a href="#about">About</a></li>
+ </ul>`;
 
+ console.log(template2);
+ 
+ //console.log 결과값
+ <ul class="nav-item">
+   <li><a href="#home">Home</a></li>
+   <li><a href="#news">News</a></li>
+   <li><a href="#contact">Contact</a></li>
+   <li><a href="#about">About</a></li>
+ </ul>
+```
