@@ -108,7 +108,8 @@ var pow=function(x:number){ //function pow(x:number)
 const test=x= x*x;
 console.log(test(20));//400
 ```
- **자바스크립트에서 자주 사용되는 함수 5가지(배열)**
+ **자바스크립트에서 자주 사용되는 함수 5가지(배열)**   
+ 
 -indexOf 함수(특정한 값을 찾을때)
 ```
 var index = [12, 5, 8, 130, 44].indexOf(8); 
