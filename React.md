@@ -40,9 +40,9 @@ node 예제파일명.js
 ## 1.4. Gulp서버의 개요 및 작성법
 Gulp는 프로젝트를 다른 빌드들로 빌드해 줄 수 있으며 많은 플러그인들을 통해 확장성있게 작업할 수 있도록 도와주는 빌드시스템.
 
-사용목적:<br>
+사용목적:<br 
 1. 웹 서버 동작
-2. 언어의 자동컴파일 구현 (ex : Sass => CSS)
+2. 언어의 자동컴파일 구현 (ex : Sass =  CSS)
 3. 자동 새로 고침 기능
 4. 배포를 위한 리소스를 최적화
 
@@ -51,11 +51,11 @@ Gulp는 프로젝트를 다른 빌드들로 빌드해 줄 수 있으며 많은 �
 # 2. TypeScript
 
 ## 2.1. 변수선언
->1. let   
+1. let   
 : 중복선언 불가, 블럭 범위내에서만 사용 가능
->2. const   
+2. const   
 : 상수화된 변수에 초기값을 설정, 중간에 값 변경불가(상수), 중복선언가능, 블럭 범위내에서만 사용 가능,   
-객체에도 사용 가능(key,value로 객체 저장 가능) => 주소값은 그대로 유지, 키에 해당되는 내용만 변경   
+객체에도 사용 가능(key,value로 객체 저장 가능) =  주소값은 그대로 유지, 키에 해당되는 내용만 변경   
 ```
 const obj = {id:123};
 const user = {
@@ -66,29 +66,29 @@ const user = {
 user.name='Kim'
 console.log(user); //Kim
 ```
->3. template literal(백틱 문자열)
+3. template literal(백틱 문자열)
 :줄바꿈,다음줄 개행 자동으로 인식   
 '작은 따옴표'와 "따옴표"를 혼용해서 사용
 ```
 const template2=`
- <ul class="nav-item">
-   <li><a href="#home">Home</a></li>
-   <li><a href="#news">News</a></li>
-   <li><a href="#contact">Contact</a></li>
-   <li><a href="#about">About</a></li>
- </ul>`;
+ <ul class="nav-item" 
+   <li <a href="#home" Home</a </li 
+   <li <a href="#news" News</a </li 
+   <li <a href="#contact" Contact</a </li 
+   <li <a href="#about" About</a </li 
+ </ul `;
 
  console.log(template2);
  
  //console.log 결과값
- <ul class="nav-item">
-   <li><a href="#home">Home</a></li>
-   <li><a href="#news">News</a></li>
-   <li><a href="#contact">Contact</a></li>
-   <li><a href="#about">About</a></li>
- </ul>
+ <ul class="nav-item" 
+   <li <a href="#home" Home</a </li 
+   <li <a href="#news" News</a </li 
+   <li <a href="#contact" Contact</a </li 
+   <li <a href="#about" About</a </li 
+ </ul 
 ```
-> ' '은 문자열뿐만 아니라 수식계산, 객체의 함수호출할때도 사용한다.
+  ' '은 문자열뿐만 아니라 수식계산, 객체의 함수호출할때도 사용한다.
 
 ```
 const name = '테스트'
@@ -97,18 +97,18 @@ const name2 = 'test'
 console.log(`1+1=${1+1}`) // 1+1=2
 console.log(`안녕. ${name2.toUpperCase()}`) // 안녕. TEST
 ```
->4. arrow function(화살표 함수)
-:function 키워드 대신 화살표(=>)를 사용하여 보다 간략한 방법으로 함수를 선언할 수 있다.(자료형 추가)   
+4. arrow function(화살표 함수)
+:function 키워드 대신 화살표(= )를 사용하여 보다 간략한 방법으로 함수를 선언할 수 있다.(자료형 추가)   
 JSON표기법 형태의 객체내부에서는 함수를 작성할때 화살표함수를 사용X
 ```
 var pow=function(x:number){ //function pow(x:number)
-    console.log('x=>'+x);
+    console.log('x= '+x);
     return x*x;
 }
-const test=x=>x*x;
+const test=x= x*x;
 console.log(test(20));//400
 ```
->**자바스크립트에서 자주 사용되는 함수 5가지(배열)**
+ **자바스크립트에서 자주 사용되는 함수 5가지(배열)**
 -indexOf 함수(특정한 값을 찾을때)
 ```
 var index = [12, 5, 8, 130, 44].indexOf(8); 
@@ -119,7 +119,7 @@ index is : 2
 -filter 함수(JSON객체중에서 특정한 값만 추출,반환)
 ```
 function isBigEnough(element, index, array) { 
-   return (element >= 10); 
+   return (element  = 10); 
 } 
           
 var passed = [12, 5, 8, 130, 44].filter(isBigEnough); 
@@ -151,15 +151,15 @@ num.forEach(function (value) {
 //결과값
 7,8,9
 ```
->5. rest,spread
+5. rest,spread
 :매개변수를 전달 못한경우에는 내부적으로 디폴트 매개변수값을 지정
 -rest 매개변수(정상적으로 매개변수값이 전달되면은 적용X)
 ```
-//x:number,y:number->default(기본값)
+//x:number,y:number- default(기본값)
 function plus(x=8,y=9){
     return x+y;
 }
-console.log('plus()=>',plus());
+console.log('plus()= ',plus());
 //결과값
 17
 ```
@@ -168,12 +168,12 @@ console.log('plus()=>',plus());
 //동적으로 배열의 값을 받아서 처리해주는 연산자 (...배열명)
 function ktest(...abc){
     console.log(Array.isArray(abc)) //배열이면 true, 배열X false
-    console.log('abc=>',abc)
+    console.log('abc= ',abc)
 }
 
 ktest(1);
 
 //결과값
 true
-abc=> [ 1 ] 
+abc=  [ 1 ] 
 ```
