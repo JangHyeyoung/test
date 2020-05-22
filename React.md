@@ -267,6 +267,9 @@ import {불러올 클래스명,상수,함수,,,} from '상대경로 및 불러�
 5. state
 + 내부적으로 데이터를 저장할 목적으로 사용(변경 가능한 데이터저장)
 + constructor( )을 이용해서 초기화 설정
++ 출력시 { this.state.stateName }
++ 업데이트시 this.setState()
++ setState 메소드를 사용 하게 될 메소드를 bind
 
 6. props
 + 매개변수를 전달
@@ -287,4 +290,6 @@ import {불러올 클래스명,상수,함수,,,} from '상대경로 및 불러�
 => 컴포넌트 클래스의 propsTypes 객체를 설정
 + 필수 props를 지정가능
 + props를 지정하지않으면 콘솔오류메세지 나옴
+
+
 
