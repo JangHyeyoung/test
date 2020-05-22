@@ -291,5 +291,121 @@ import {불러올 클래스명,상수,함수,,,} from '상대경로 및 불러�
 + 필수 props를 지정가능
 + props를 지정하지않으면 콘솔오류메세지 나옴
 
+<hr>
+
+[Vue.js]
+======================
+
+# 1. Vue 개요 및 작성법
+
+## 1.1. 개요 및 특성
+
+1. 개요
++ 선언적 프로그래밍방식
+2. 특성   
++ 변수와 가상DOM을 가진 프레임워크
+
+## 1.2. 설치방법
+
+1. 설치
+```
+npm install -g @Vue/cli
+yarn global add @Vue/cli
+```
+2. 프로젝트 생성
+```
+vue create <프로젝트명>
+```
+
+3. Vue 3가지 구성요소
++ Template
+  + 화면에 출력하는 부분 디자인에 사용
++ Script
+  + Vue의 코드를 작성하는 영역(변수선언,함수선언,속성설정)
++ Style
+  + 스타일 시트 적용(부모,자식 컴포넌트 적용 방법차이O)
+
+4. 실행방법
++ 명령어
+```
+yarn serve
+```
+
+5. Props
+```
+{ 매개변수명 : 전달받은 값의 자료형 }
+```
++ 매개변수가 여러개면 [ ]배열로 받음
++ 중간에 -(하이픈)이 있으면 인식불가(- 빼고 다음 글자 대문자설정)
++ Binding(단방향) : 숫자 계산,객체 속성명에 해당되는 데이터 출력불가(불린,숫자,객체 등등)
+  + v-bind: 매개변수명으로 전달하면 출력가능
+    + 매개변수 = 전달할값(원칙)
+  + v-bind생략 후 => 매개변수명 사용가능
++ 매개변수를 전달받지 못할 시 default값 설정
+```
+export default{
+  name:'Default',
+  props:{
+    username: String,
+    age:{
+      type: Number,
+      derault: 31
+    }
+  }
+}
+```
+
+6. 동적 매개변수
++ 함수형
+```
+data:function(){
+  return;
+}
+```
++ 화살표함수(arrow function)
+```
+data:()=>{
+  return;
+}
+```
+
+7.정적 매개변수
++ Methods
+```
+methods:{
+  aaa:function(){
+    //Getter 역할
+  },
+  change:function(){
+    //Setter 역할
+  }
+}
+```
++ Computed
+```
+computed:{
+  //계산 속성 => 일회성,화면에 여러번 출력가능(호출은 한번)
+  //메모리에 저장
+  aaa:function(){
+    return;
+  }
+}
+```
++ Watch
+```
+watch:{
+  aaa:function(changeValue){
+    //watch 속성
+      1.비동기처리에 주로사용
+      2.데이터가 변경되면 함수 자동호출
+      3.반드시 함수명과 data속성명 일치
+      4.화면상 에러x => 콘솔에서 변경된 값 호출하지 않음을 확인가능
+  }
+}
+```
+
+
+
+
 
 
